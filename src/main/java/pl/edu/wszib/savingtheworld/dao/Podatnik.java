@@ -22,8 +22,12 @@ public class Podatnik {
         this.nazwisko = nazwisko;
     }
 
-    @OneToMany(targetEntity = = Faktura.class, fetch = )
+    @OneToMany(mappedBy = "podatnik", fetch = FetchType.EAGER)
     List<Faktura> faktury;
+
+    public void setFaktury(List<Faktura> faktury) {
+        this.faktury = faktury;
+    }
 
     public Podatnik(){
 
